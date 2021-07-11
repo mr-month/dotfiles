@@ -1,1 +1,4 @@
-i3
+
+xrandr --auto
+
+exec i3
