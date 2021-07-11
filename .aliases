@@ -1,0 +1,15 @@
+
+### aliases
+alias c='clear'
+
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+alias gl='git log --all --graph --oneline'
+alias gs='git status'
+alias gf='git fetch --all --prune'
+alias gp='git pull --ff-only'
+alias gd='git diff'
+
+alias vim='nvim'
