@@ -1,5 +1,6 @@
 
 xrandr --auto
-autorandr --change
+# autorandr --change
 
-exec i3
+# exec i3
+exec awesome
