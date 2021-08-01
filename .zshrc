@@ -114,3 +114,6 @@ source $ZSH/oh-my-zsh.sh
 
 # do not share history, thank you!
 unsetopt share_history
+
+# use user-specific ranger config only, don't load it twice
+export RANGER_LOAD_DEFAULT_RC="FALSE"
