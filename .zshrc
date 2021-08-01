@@ -117,3 +117,5 @@ unsetopt share_history
 
 # use user-specific ranger config only, don't load it twice
 export RANGER_LOAD_DEFAULT_RC="FALSE"
+
+export VISUAL="$(command -v nvim)"
