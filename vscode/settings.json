@@ -1,0 +1,23 @@
+{
+    "editor.fontSize": 16,
+    "editor.lineNumbers": "relative",
+    "editor.rulers": [
+        80,
+        100,
+        120,
+        150
+    ],
+
+    "window.zoomLevel": 1,
+
+    "workbench.colorTheme": "Gruvbox Dark Medium",
+
+    "vim.enableNeovim": true,
+    "vim.hlsearch": true,
+    "vim.textwidth": 100,
+    "vim.useSystemClipboard": true,
+
+    "[tf]": {
+        "editor.tabSize": 2,
+    }
+}
