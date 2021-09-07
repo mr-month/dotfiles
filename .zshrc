@@ -82,6 +82,9 @@ export ZSH="/home/shawn/.oh-my-zsh"
 plugins=(
     git
     kubectl
+
+    # custom plugins (that don't overwrite)
+    custom-aws
 )
 
 source $ZSH/oh-my-zsh.sh
