@@ -143,3 +143,10 @@ autoload -Uz run-help-svn
 
 (( ${+aliases[run-help]} )) && unalias run-help
 alias help=run-help
+
+
+# kubectl ... use all config files found in '.kube/configs'
+KUBECONFIG=""
+[[ -d ~/.kube/configs ]] && KUBECONFIG=`find ~/.kube/configs -type f | tr "\n" ":"`
+[[ -f ~/.kube/config ]] && KUBECONFIG="~/.kube/config:$KUBECONFIG"
+[[ -z "$KUBECONFIG" ]] && unset KUBECONFIG || export KUBECONFIG
