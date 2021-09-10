@@ -150,3 +150,8 @@ KUBECONFIG=""
 [[ -d ~/.kube/configs ]] && KUBECONFIG=`find ~/.kube/configs -type f | tr "\n" ":"`
 [[ -f ~/.kube/config ]] && KUBECONFIG="~/.kube/config:$KUBECONFIG"
 [[ -z "$KUBECONFIG" ]] && unset KUBECONFIG || export KUBECONFIG
+
+
+# modifications to PATH
+PATH="${HOME}/.local/bin:${PATH}"
+export PATH
