@@ -19,5 +19,6 @@
 
     "[tf]": {
         "editor.tabSize": 2,
-    }
+    },
+    "tabnine.experimentalAutoImports": true
 }
