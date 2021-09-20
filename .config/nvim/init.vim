@@ -1,3 +1,7 @@
+" first things first...
+set nocompatible
+
+
 
 " ======= plugins =============================================================
 " vim-plug, usage: 'Plug<CMD>'
@@ -40,12 +44,32 @@ call plug#begin(stdpath('data') . '/plugged')
 
 Plug 'neovim/nvim-lspconfig'
 
+
+" linting
+Plug 'neomake/neomake'
+" Plug 'w0rp/ale'  " maybe...??
+
+
+" completion
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+let g:deoplete#enable_at_startup = 1
+
+" Plug 'hrsh7th/nvim-compe'  " maybe...?
+" Plug 'hrsh7th/nvim-cmp'  " maybe...?
+" Plug 'Shougo/ddc.vim'  " maybe...?
+
+
+" ==== language specific plugins
+" Terraform / HCL
+Plug 'hashivim/vim-terraform'
+Plug 'juliosueiras/vim-terraform-completion'
+
+
 " Initialize plugin system
 call plug#end()
 " ======= end of plugins ======================================================
 
 
-set nocompatible
 set number relativenumber
 
 " TODO: maybe set to 2, surely use filetype-based settings
@@ -73,3 +97,12 @@ set splitbelow
 syntax on
 
 set clipboard+=unnamedplus
+
+
+" ==== mappings
+" completion (Tab and Shift+Tab cycle through popup menu, Enter / Esc to select/close)
+inoremap <expr> <Esc>      pumvisible() ? "\<C-e>" : "\<Esc>\<Esc>"
+inoremap <expr> <CR>       pumvisible() ? "\<C-y>" : "\<CR>"
+inoremap <silent><expr><tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <silent><expr><s-tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
