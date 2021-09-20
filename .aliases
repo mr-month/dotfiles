@@ -11,5 +11,18 @@ alias gs='git status'
 alias gf='git fetch --all --prune'
 alias gp='git pull --ff-only'
 alias gd='git diff'
+alias ga='git add'
+alias gc='git commit'
+
+alias t='terraform'
+alias ti='t init'
+alias ta='t apply'
+alias tay='ta --auto-approve'
+alias tia='ti && ta'
+alias to='t output'
+alias tf='t fmt'
+alias tfr='tf -recursive'
 
 alias vim='nvim'
+
+
