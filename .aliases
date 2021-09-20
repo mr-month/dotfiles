@@ -25,4 +25,7 @@ alias tfr='tf -recursive'
 
 alias vim='nvim'
 
+alias feh-basic='feh --auto-zoom --full-screen --auto-rotate'
+alias feh-slideshow='feh-basic --slideshow-delay 5'
+
 
