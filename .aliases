@@ -28,4 +28,4 @@ alias vim='nvim'
 alias feh-basic='feh --auto-zoom --full-screen --auto-rotate'
 alias feh-slideshow='feh-basic --slideshow-delay 5'
 
-
+if type open-lens &> /dev/null; then alias lens='open-lens'; fi
