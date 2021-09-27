@@ -82,6 +82,7 @@ DISABLE_UPDATE_PROMPT="false"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     git
+    helm
     kubectl
     z
 
