@@ -4,6 +4,7 @@ alias docker=podman
 
 # misc
 alias c='clear'
+alias sudo='sudo '  # pass aliases when using sudo
 
 # ls
 alias ll='ls -alF'
