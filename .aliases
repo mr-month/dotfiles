@@ -1,11 +1,16 @@
 
-### aliases
+# containers (docker is dead, long live podman)
+alias docker=podman
+
+# misc
 alias c='clear'
 
+# ls
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
+# git
 alias gl='git log --all --graph --oneline'
 alias gs='git status'
 alias gf='git fetch --all --prune'
@@ -14,6 +19,7 @@ alias gd='git diff'
 alias ga='git add'
 alias gc='git commit'
 
+# terraform
 alias t='terraform'
 alias ti='t init'
 alias ta='t apply'
@@ -23,9 +29,12 @@ alias to='t output'
 alias tf='t fmt'
 alias tfr='tf -recursive'
 
+# vim
 alias vim='nvim'
 
+# feh (image viewer)
 alias feh-basic='feh --auto-zoom --full-screen --auto-rotate'
 alias feh-slideshow='feh-basic --slideshow-delay 5'
 
+# lens ("Kubernetes IDE")
 if type open-lens &> /dev/null; then alias lens='open-lens'; fi
