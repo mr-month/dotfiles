@@ -45,7 +45,18 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
+local user_themes_dir = gears.filesystem.get_xdg_config_home() .. "awesome/themes/"
+local system_themes_dir = gears.filesystem.get_themes_dir()
+local theme_name = os.getenv("_AWESOME_THEME_NAME") or "default"
+if gears.filesystem.file_readable(user_themes_dir .. theme_name .. "/theme.lua") then
+    beautiful.init(user_themes_dir .. theme_name .. "/theme.lua")
+elseif gears.filesystem.file_readable(system_themes_dir .. theme_name .. "/theme.lua") then
+    beautiful.init(system_themes_dir .. theme_name .. "/theme.lua")
+else
+    -- theme specified by user not found in either local or system-wide directories, defaulting to
+    -- system theme "default"
+    beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
+end
 
 -- This is used later as the default terminal and editor to run.
 terminal = "kitty"

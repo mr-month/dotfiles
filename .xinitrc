@@ -10,4 +10,5 @@ xscreensaver --no-splash &
 setxkbmap -layout "us,cz(qwerty)" -option "grp:alt_shift_toggle"
 
 # exec i3
+export _AWESOME_THEME_NAME="basic"
 exec awesome
