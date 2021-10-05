@@ -39,3 +39,6 @@ alias feh-slideshow='feh-basic --slideshow-delay 5'
 
 # lens ("Kubernetes IDE")
 if type open-lens &> /dev/null; then alias lens='open-lens'; fi
+
+# netcat
+command -v ncat > /dev/null 2>&1 && alias nc='ncat'
