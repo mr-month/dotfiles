@@ -73,6 +73,9 @@ Plug 'juliosueiras/vim-terraform-completion'
 " If you have nodejs and yarn
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
+" == JavaScript
+Plug 'posva/vim-vue'
+
 
 " Initialize plugin system
 call plug#end()
