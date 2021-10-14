@@ -113,8 +113,16 @@ set clipboard+=unnamedplus
 
 " ==== mappings
 " completion (Tab and Shift+Tab cycle through popup menu, Enter / Esc to select/close)
-inoremap <expr> <Esc>      pumvisible() ? "\<C-e>" : "\<Esc>\<Esc>"
-inoremap <expr> <CR>       pumvisible() ? "\<C-y>" : "\<CR>"
-inoremap <silent><expr><tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <Esc>          pumvisible() ? "\<C-e>" : "\<Esc>\<Esc>"
+inoremap <expr> <CR>           pumvisible() ? "\<C-y>" : "\<CR>"
+inoremap <silent><expr><tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <silent><expr><s-tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
+" Esc will switch to terminal normal mode
+tnoremap <Esc> <C-\><C-n>
+
+" open terminal in split
+command! T TV
+command! TV vsplit | terminal zsh
+command! TH split  | terminal zsh
+" TODO: command! T  (splitright == 1 ? ':TV' : ':TH')  ...syntax not quite right
