@@ -337,7 +337,14 @@ globalkeys = gears.table.join(
               {description = "lua execute prompt", group = "awesome"}),
     -- Menubar
     awful.key({ modkey }, "p", function() menubar.show() end,
-              {description = "show the menubar", group = "launcher"})
+              {description = "show the menubar", group = "launcher"}),
+
+    -- Lock screen
+    awful.key({ modkey,           }, "Escape",
+        function ()
+            awful.util.spawn("xscreensaver-command -lock")
+        end,
+        {description="lock screen", group="awesome"})
 )
 
 clientkeys = gears.table.join(
