@@ -1,5 +1,8 @@
 " first things first...
 set nocompatible
+" use system Python (do it at the beginning)
+let g:python_host_prog = '/usr/bin/python'
+let g:python3_host_prog = '/usr/bin/python3'
 
 
 
