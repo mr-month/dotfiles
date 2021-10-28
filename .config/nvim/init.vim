@@ -113,8 +113,6 @@ set clipboard+=unnamedplus
 
 " ==== mappings
 " completion (Tab and Shift+Tab cycle through popup menu, Enter / Esc to select/close)
-inoremap <expr> <Esc>          pumvisible() ? "\<C-e>" : "\<Esc>\<Esc>"
-inoremap <expr> <CR>           pumvisible() ? "\<C-y>" : "\<CR>"
 inoremap <silent><expr><tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <silent><expr><s-tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
