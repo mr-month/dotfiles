@@ -113,6 +113,11 @@ syntax on
 
 set clipboard+=unnamedplus
 
+set wildmenu
+set wildmode=longest:full,full
+set wildoptions=pum
+" optionally could change key mappings using cnoremap with pumvisible()...
+
 
 " ==== mappings
 " completion (Tab and Shift+Tab cycle through popup menu, Enter / Esc to select/close)
