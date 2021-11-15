@@ -118,6 +118,12 @@ set wildmode=longest:full,full
 set wildoptions=pum
 " optionally could change key mappings using cnoremap with pumvisible()...
 
+" current cursor column/line highlights
+" NOTE: color setting is temporary - want to reference system colors (.Xresources)
+set cursorline
+set cursorcolumn
+highlight CursorLine cterm=NONE ctermbg=242
+
 
 " ==== mappings
 " completion (Tab and Shift+Tab cycle through popup menu, Enter / Esc to select/close)
