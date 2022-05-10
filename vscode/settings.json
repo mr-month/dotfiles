@@ -20,5 +20,17 @@
     "[tf]": {
         "editor.tabSize": 2,
     },
-    "tabnine.experimentalAutoImports": true
+    "tabnine.experimentalAutoImports": true,
+    "colorize.languages": [
+        "css",
+        "sass",
+        "scss",
+        "less",
+        "postcss",
+        "sss",
+        "stylus",
+        "xml",
+        "svg",
+        "vue"
+    ]
 }

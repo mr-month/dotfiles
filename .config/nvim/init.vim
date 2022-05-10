@@ -138,3 +138,7 @@ command! T TV
 command! TV vsplit | terminal zsh
 command! TH split  | terminal zsh
 " TODO: command! T  (splitright == 1 ? ':TV' : ':TH')  ...syntax not quite right
+
+
+" to be tried out
+" nnoremap <Enter> o<ESC>
