@@ -4,6 +4,8 @@ alias docker=podman
 
 # misc
 alias c='clear'
+alias ranger='SHELL=zsh ranger'  # bypass default shell so that ranger uses zsh
+# alias ranger='source ranger'  # makes shell "follow" ranger, i.e. after closing ranger stay in that directory
 alias sudo='sudo '  # pass aliases when using sudo
 
 # ls
