@@ -93,7 +93,6 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # User configuration
 
@@ -157,3 +156,6 @@ KUBECONFIG=""
 # modifications to PATH
 PATH="${HOME}/.local/bin:${PATH}"
 export PATH
+
+# must be at the end as per documentation (https://github.com/zsh-users/zsh-syntax-highlighting)
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
