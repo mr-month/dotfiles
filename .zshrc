@@ -111,6 +111,10 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 #   export EDITOR='mvim'
 # fi
 
+# set default (text) editor, see https://unix.stackexchange.com/a/4861
+export VISUAL="nvim"
+export EDITOR="$VISUAL"
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
