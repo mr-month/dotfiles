@@ -1,12 +1,14 @@
 
-# containers (docker is dead, long live podman)
-alias docker=podman
-
 # misc
 alias c='clear'
-alias ranger='SHELL=zsh ranger'  # bypass default shell so that ranger uses zsh
+command -v zsh > /dev/null 2>&1 \
+  && alias ranger='SHELL=zsh ranger'  # bypass default shell so that ranger uses zsh
 # alias ranger='source ranger'  # makes shell "follow" ranger, i.e. after closing ranger stay in that directory
 alias sudo='sudo '  # pass aliases when using sudo
+
+# containers (docker is dead, long live podman)
+command -v podman > /dev/null 2>&1 \
+  && alias docker='podman'
 
 # ls
 alias ll='ls -alF'
@@ -33,14 +35,17 @@ alias tf='t fmt'
 alias tfr='tf -recursive'
 
 # vim
-alias vim='nvim'
+command -v nvim > /dev/null 2>&1 \
+  && alias vim='nvim'
 
 # feh (image viewer)
 alias feh-basic='feh --auto-zoom --full-screen --auto-rotate'
 alias feh-slideshow='feh-basic --slideshow-delay 5'
 
 # lens ("Kubernetes IDE")
-if type open-lens &> /dev/null; then alias lens='open-lens'; fi
+command -v open-lens > /dev/null 2>&1 \
+  && alias lens='open-lens'
 
 # netcat
-command -v ncat > /dev/null 2>&1 && alias nc='ncat'
+command -v ncat > /dev/null 2>&1 \
+  && alias nc='ncat'

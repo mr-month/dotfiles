@@ -112,7 +112,8 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 # fi
 
 # set default (text) editor, see https://unix.stackexchange.com/a/4861
-export VISUAL="nvim"
+export VISUAL="vim"
+#export VISUAL="$(command -v nvim)"
 export EDITOR="$VISUAL"
 
 # Compilation flags
@@ -135,8 +136,6 @@ unsetopt share_history
 
 # use user-specific ranger config only, don't load it twice
 export RANGER_LOAD_DEFAULT_RC="FALSE"
-
-export VISUAL="$(command -v nvim)"
 
 
 # `help` command like in BASH (by default `run-help` is aliased to `man`)
