@@ -1,3 +1,25 @@
+# installation and setup
+* clone repo
+    ``` shell
+    # clone the repo
+    git clone https://github.com/mr-month/dotfiles ~/dotfiles
+    ```
+
+* (OPTIONAL) set up "write access"
+  * create (password-protected!) SSH key pair and register it with GitHub
+  * add the following to `~/.ssh/config`
+    ``` text
+    Host github.com-mr-month
+        AddKeysToAgent yes
+        HostName github.com
+        PreferredAuthentications publickey
+        IdentityFile ~/.ssh/<PUBLIC KEY>
+    ```
+  * change remote URL for `push` only
+    ``` shell
+    git remote set-url --push origin git@github.com-mr-month:mr-month/dotfiles.git
+    ```
+
 # How to
 **Do not create symlinks in here.** Instead move the config files here and create symlink in the original location.
 
@@ -14,6 +36,14 @@ It will replace the hardlink with a new file with updated contents, not update t
 Solution is to have the "real" files in here and symlink to it from `HOME` directory.
 
 # Some decisions, context, &hellip; for my future self's reference
+
+## different URL for `fetch` and `push`
+It is possible to configure `git` to use different URL for `fetch` and `push` with the same remote.
+Documentation recommends that both URLs point to the same location (otherwise different remote
+should be used). This way we can have `https://github...` for unauthenticated "read-only" updates
+and `git@github...` for pushing new updates using password-protected SSH key authentication.
+
+
 ## i3 is dead, long live AwesomeWM
 For some time I had been questioning my earlier decision to go with Awesome WM as my first tiling
 window manager instead of trying the simpler i3. With new setup (and consequent ability to "do it
