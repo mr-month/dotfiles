@@ -20,6 +20,19 @@
     git remote set-url --push origin git@github.com-mr-month:mr-month/dotfiles.git
     ```
 
+# TODOs
+## zshrc
+Start by removing comments then change Antigen equivalent.
+
+Then try to replicate (step by step) in plain zsh
+([reddit comment](https://www.reddit.com/r/zsh/comments/ah17q7/comment/eeanr85)
+pointing to [this repository](https://gitlab.com/yramagicman/stow-dotfiles/-/tree/master))
+
+## inspiration
+* [this dotfiles repo](https://gitlab.com/yramagicman/stow-dotfiles) (seems the person seriously
+  knows his stuff&hellip;?)
+
+
 # How to
 **Do not create symlinks in here.** Instead move the config files here and create symlink in the original location.
 
@@ -36,6 +49,11 @@ It will replace the hardlink with a new file with updated contents, not update t
 Solution is to have the "real" files in here and symlink to it from `HOME` directory.
 
 # Some decisions, context, &hellip; for my future self's reference
+
+## zsh configuration (TO BE DETERMINED)
+Should I be using frameworks and managers or write it myself? Seems the frameworks are
+in many cases obstructions for what is basically "set a couple of options in zsh, fetch a couple
+repos and source them"&hellip;
 
 ## different URL for `fetch` and `push`
 It is possible to configure `git` to use different URL for `fetch` and `push` with the same remote.
