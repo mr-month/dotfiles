@@ -98,6 +98,8 @@ source $ZSH/oh-my-zsh.sh
 unalias -m '*'
 eval $_SAVED_ALIASES; unset _SAVED_ALIASES
 
+[[ -f "$HOME/.aliases" ]] && source "$HOME/.aliases"
+
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # User configuration
