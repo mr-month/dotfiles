@@ -23,8 +23,8 @@ antigen use oh-my-zsh
 _SAVED_ALIASES=$(alias -L)
 
 antigen bundle git
-antigen bundle helm
-antigen bundle kubectl
+# antigen bundle helm
+# antigen bundle kubectl
 antigen bundle z
 
 antigen bundle zsh-users/zsh-autosuggestions
