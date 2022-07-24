@@ -10,27 +10,37 @@ fi
 PATH="${HOME}/.local/bin:${PATH}"
 export PATH
 
-export ZSH="$HOME/.oh-my-zsh"
-export ZSH_CUSTOM="$HOME/dotfiles/.oh-my-zsh/custom"
 
-DISABLE_UPDATE_PROMPT="false"
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+  [[ -r "/usr/share/zsh/share/antigen.zsh" ]] && source "/usr/share/zsh/share/antigen.zsh"
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+  source "$(brew --prefix)/share/antigen/antigen.zsh"
+fi
 
-plugins=(
-    git
-    helm
-    kubectl
-    z
 
-    # custom plugins (that don't overwrite)
-    custom-aws
-)
+antigen use oh-my-zsh
 
 _SAVED_ALIASES=$(alias -L)
-source $ZSH/oh-my-zsh.sh
+
+antigen bundle git
+antigen bundle helm
+antigen bundle kubectl
+antigen bundle z
+
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zsh-users/zsh-syntax-highlighting
+
+# TODO: antigen bundle mr-month/dotfiles custom/custom-aws
+
+antigen apply
+
 unalias -m '*'
 eval $_SAVED_ALIASES; unset _SAVED_ALIASES
 
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+#export ZSH="$HOME/.oh-my-zsh"
+#export ZSH_CUSTOM="$HOME/dotfiles/.oh-my-zsh/custom"
+
+#DISABLE_UPDATE_PROMPT="false"
 
 # set default (text) editor, see https://unix.stackexchange.com/a/4861
 export VISUAL="vim"
@@ -66,6 +76,3 @@ KUBECONFIG=""
 [[ -d ~/.kube/configs ]] && KUBECONFIG=`find ~/.kube/configs -type f | tr "\n" ":"`
 [[ -f ~/.kube/config ]] && KUBECONFIG="~/.kube/config:$KUBECONFIG"
 [[ -z "$KUBECONFIG" ]] && unset KUBECONFIG || export KUBECONFIG
-
-# must be at the end as per documentation (https://github.com/zsh-users/zsh-syntax-highlighting)
-source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
