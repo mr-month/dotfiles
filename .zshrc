@@ -1,4 +1,4 @@
-# should be up top (especially above anything requiring user input)
+# should high up top, anything requiring user input must be above this
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
@@ -29,6 +29,8 @@ antigen bundle z
 
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
+
+antigen theme romkatv/powerlevel10k
 
 # TODO: antigen bundle mr-month/dotfiles custom/custom-aws
 
