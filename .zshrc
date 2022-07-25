@@ -20,9 +20,8 @@ fi
 
 antigen use oh-my-zsh
 
-_SAVED_ALIASES=$(alias -L)
 
-antigen bundle git
+antigen bundle git-prompt
 # antigen bundle helm
 # antigen bundle kubectl
 antigen bundle z
@@ -36,8 +35,6 @@ antigen theme romkatv/powerlevel10k
 
 antigen apply
 
-unalias -m '*'
-eval $_SAVED_ALIASES; unset _SAVED_ALIASES
 
 #export ZSH="$HOME/.oh-my-zsh"
 #export ZSH_CUSTOM="$HOME/dotfiles/.oh-my-zsh/custom"
