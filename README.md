@@ -20,6 +20,8 @@
     git remote set-url --push origin git@github.com-mr-month:mr-month/dotfiles.git
     ```
 
+* (OPTIONAL) set up `ranger` (see below)
+
 # TODOs
 ## zshrc
 Start by removing comments then change Antigen equivalent.
@@ -49,6 +51,18 @@ It will replace the hardlink with a new file with updated contents, not update t
 Solution is to have the "real" files in here and symlink to it from `HOME` directory.
 
 # Some decisions, context, &hellip; for my future self's reference
+## ranger and python interpreters
+Homebrew-installed `ranger` has shebang pointing to particular python (from homebrew) and not system one. Kinda messy and could break if extra packages are required.
+
+Copied the [original run script](https://github.com/ranger/ranger/blob/master/ranger.py) from ranger to `<dotfiles>/scripts/ranger-wrapper`. Install ranger using python with
+``` bash
+<python interpreter> -m pip install ranger-fm [needed packages...]
+```
+(`Pillow` is needed for kitty image previews), copy the script to e.g. `~/.local/bin/ranger` and prepend correct shebang
+``` bash
+#!<python interpreter>
+<contents of scripts/ranger-wrapper>
+```
 
 ## zsh configuration (TO BE DETERMINED)
 Should I be using frameworks and managers or write it myself? Seems the frameworks are
