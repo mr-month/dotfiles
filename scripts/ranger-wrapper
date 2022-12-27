@@ -33,6 +33,12 @@ import sys
 ARGV = sys.argv[1:sys.argv.index('--')] if '--' in sys.argv else sys.argv[1:]
 sys.dont_write_bytecode = '-c' in ARGV or '--clean' in ARGV
 
+try:
+    from pillow_heif import register_heif_opener
+    register_heif_opener()
+except ImportError:
+    pass  # TODO: log or something
+
 # Start ranger
 import ranger  # NOQA pylint: disable=import-self,wrong-import-position
 sys.exit(ranger.main())  # pylint: disable=no-member
