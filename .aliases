@@ -1,10 +1,20 @@
 
 # misc
 alias c='clear'
-command -v zsh > /dev/null 2>&1 \
-  && alias ranger='SHELL=zsh ranger'  # bypass default shell so that ranger uses zsh
-# alias ranger='source ranger'  # makes shell "follow" ranger, i.e. after closing ranger stay in that directory
 alias sudo='sudo '  # pass aliases when using sudo
+
+# NOTE:
+#   `alias ranger='SHELL=zsh ranger'`  bypasses default shell so that ranger uses zsh
+#   `alias ranger='source ranger'`  makes shell "follow" ranger, i.e. after closing ranger stay in that directory
+if [[ -f "$HOME/.local/bin/ranger" ]]; then
+  # TODO: these "if"s could probably be more elegant
+  command -v zsh > /dev/null 2>&1 \
+    && alias ranger="SHELL=zsh $HOME/.local/bin/ranger" \
+    || alias ranger="$HOME/.local/bin/ranger"
+else
+  command -v zsh > /dev/null 2>&1 \
+    && alias ranger="SHELL=zsh ranger"
+fi
 
 # containers (docker is dead, long live podman)
 command -v podman > /dev/null 2>&1 \
