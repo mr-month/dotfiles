@@ -1,0 +1,46 @@
+set number relativenumber
+
+let mapleader=","
+
+" TODO: maybe set to 2, surely use filetype-based settings
+set expandtab
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+" set shiftround
+set autoindent
+
+set textwidth=100
+set colorcolumn=+1
+
+set listchars=tab:»·,trail:·,extends:>,precedes:<,nbsp:•
+" TODO: leading spaces (either 'lead' or plugin to show indentation differences)
+" MAYBE: eol:$
+
+set list
+
+set scrolloff=2
+
+set splitright
+set splitbelow
+
+
+" search
+set incsearch
+" smartcase needs ignorecase
+set ignorecase smartcase
+
+syntax on
+
+set clipboard+=unnamedplus
+
+set wildmenu
+set wildmode=longest:full,full
+set wildoptions=pum
+" optionally could change key mappings using cnoremap with pumvisible()...
+
+" current cursor column/line highlights
+" NOTE: color setting is temporary - want to reference system colors (.Xresources)
+set cursorline
+set cursorcolumn
+highlight CursorLine cterm=NONE ctermbg=242

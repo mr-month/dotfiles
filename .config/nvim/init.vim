@@ -12,7 +12,7 @@ let g:python3_host_prog = '/usr/bin/python3'
 " Specify a directory for plugins
 " - For Neovim: stdpath('data') . '/plugged'
 " - Avoid using standard Vim directory names like 'plugin'
-call plug#begin(stdpath('data') . '/plugged')
+"call plug#begin(stdpath('data') . '/plugged')
 
 " Make sure you use single quotes
 
@@ -45,17 +45,17 @@ call plug#begin(stdpath('data') . '/plugged')
 "Plug '~/my-prototype-plugin'
 
 
-Plug 'neovim/nvim-lspconfig'
+"Plug 'neovim/nvim-lspconfig'
 
 
 " linting
-Plug 'neomake/neomake'
+"Plug 'neomake/neomake'
 " Plug 'w0rp/ale'  " maybe...??
 
 
 " completion
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-let g:deoplete#enable_at_startup = 1
+"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+"let g:deoplete#enable_at_startup = 1
 
 " Plug 'hrsh7th/nvim-compe'  " maybe...?
 " Plug 'hrsh7th/nvim-cmp'  " maybe...?
@@ -64,8 +64,8 @@ let g:deoplete#enable_at_startup = 1
 
 " ==== language specific plugins
 " == Terraform / HCL
-Plug 'hashivim/vim-terraform'
-Plug 'juliosueiras/vim-terraform-completion'
+"Plug 'hashivim/vim-terraform'
+"Plug 'juliosueiras/vim-terraform-completion'
 
 
 " == Markdown
@@ -74,55 +74,20 @@ Plug 'juliosueiras/vim-terraform-completion'
 " see: https://github.com/iamcco/markdown-preview.nvim/issues/50
 " Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 " If you have nodejs and yarn
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+"Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
 " == JavaScript
-Plug 'posva/vim-vue'
+"Plug 'posva/vim-vue'
 
 
 " Initialize plugin system
-call plug#end()
+"call plug#end()
 " ======= end of plugins ======================================================
 
 
-set number relativenumber
-
-" TODO: maybe set to 2, surely use filetype-based settings
-set expandtab
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-" set shiftround
-set autoindent
-
-set textwidth=100
-set colorcolumn=+1
-
-set listchars=tab:»·,trail:·,extends:>,precedes:<,nbsp:•
-" TODO: leading spaces (either 'lead' or plugin to show indentation differences)
-" MAYBE: eol:$
-
-set list
-
-set scrolloff=2
-
-set splitright
-set splitbelow
-
-syntax on
-
-set clipboard+=unnamedplus
-
-set wildmenu
-set wildmode=longest:full,full
-set wildoptions=pum
-" optionally could change key mappings using cnoremap with pumvisible()...
-
-" current cursor column/line highlights
-" NOTE: color setting is temporary - want to reference system colors (.Xresources)
-set cursorline
-set cursorcolumn
-highlight CursorLine cterm=NONE ctermbg=242
+if filereadable(expand("~/.vimrc.common"))
+  source ~/.vimrc.common
+endif
 
 
 " ==== mappings

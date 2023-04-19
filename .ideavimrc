@@ -1,0 +1,32 @@
+"" IdeaVim doesn't seem to support 'filereadable' but sourcing non-existing file doesn't seem to cause problems
+" if filereadable(expand("~/.vimrc.common"))
+"   source ~/.vimrc.common
+" endif
+source ~/.vimrc.common
+
+set clipboard+=unnamed
+set clipboard+=ideaput
+set scrolloff=2
+set number relativenumber
+
+
+set incsearch
+" smartcase needs ignorecase
+set ignorecase smartcase
+
+
+
+set visualbell
+set noerrorbells
+
+set NERDTree
+
+
+" PyCharm-specific commands (TODO: figure out how to define in .vimrc.common)
+nnoremap <leader>s :action SearchEverywhere <CR>
+nnoremap <leader>ne :NERDTreeToggle <CR><ESC>
+
+"set number
+"set relativenumber
+
+"set clipboard+=unnamedplus
