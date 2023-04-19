@@ -22,9 +22,27 @@ set noerrorbells
 set NERDTree
 
 
-" PyCharm-specific commands (TODO: figure out how to define in .vimrc.common)
-nnoremap <leader>s :action SearchEverywhere <CR>
-nnoremap <leader>ne :NERDTreeToggle <CR><ESC>
+" ==== PyCharm-specific commands ==============================================
+
+" NOTE: to find actions, run SearchEverywhere and enable 'IdeaVim: Track Action Ids'
+" TODO: figure out how to define all available key mappings in .vimrc.common ??
+
+nmap <leader>s <Action>(SearchEverywhere)
+
+
+" Refactor commands
+nmap <leader>ri <Action>(Inline)
+nmap <leader>rr <Action>(RenameElement)
+nmap <leader>rm <Action>(Move)
+nmap <leader>rfs <Action>(ReformatCode)
+
+
+" Goto commands
+nmap <leader>gd <Action>(GotoDeclaration)
+
+
+" TODO: (un)comment line/block
+
 
 "set number
 "set relativenumber
