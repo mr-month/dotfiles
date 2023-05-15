@@ -42,8 +42,11 @@ antigen apply
 #DISABLE_UPDATE_PROMPT="false"
 
 # set default (text) editor, see https://unix.stackexchange.com/a/4861
-export VISUAL="vim"
+#export VISUAL="vim"
 #export VISUAL="$(command -v nvim)"
+command -v nvim > /dev/null 2>&1 \
+  && export VISUAL='nvim' \
+  || export VISUAL='vim'
 export EDITOR="$VISUAL"
 
 [[ -f "$HOME/.aliases" ]] && source "$HOME/.aliases"
