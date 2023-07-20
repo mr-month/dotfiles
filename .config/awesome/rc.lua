@@ -580,6 +580,42 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- }}}
 
 
+-- {{{ make screen ordering robust
+-- courtesy of Tom Jorquera  (link: github.com/awesomeWM/awesome/issues/1122#issuecomment-250736450)
+
+function screen_layout (screen_comparator)
+  -- sort the screens based on the order defined by the screen_comparator function
+  -- (haha bubblesort!)
+  local size = screen.count()
+  local stop = false
+  while not stop do
+    stop = true
+    for i = 1,size-1 do
+      if screen_comparator(screen[i], screen[i+1]) > 0 then
+        screen[i]:swap(screen[i+1])
+        stop = false
+      end
+    end
+  end
+end
+
+function left_right_then_top_bottom_comparator (screen1, screen2)
+  -- order screens from left to right, then top to bottom
+  if screen1.geometry.x ~= screen2.geometry.x then
+    -- return screen1.geometry.x - screen2.geometry.x
+    return screen2.geometry.x - screen1.geometry.x
+  else
+    -- return screen1.geometry.y - screen2.geometry.y
+    return screen2.geometry.y - screen1.geometry.y
+  end
+end
+
+-- apply screen layout with my custom ordering
+screen_layout(left_right_then_top_bottom_comparator)
+
+-- }}}
+
+
 -- start-up stuff
 awful.spawn.with_shell(
     -- using `[[ -f ... ]]` construct because gears.filesystem.file_readable
