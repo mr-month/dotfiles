@@ -10,6 +10,11 @@ fi
 PATH="${HOME}/.local/bin:${PATH}"
 export PATH
 
+export PYENV_ROOT="${HOME}/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+(( $+commands[pyenv] )) && eval "$(pyenv init - zsh)"
+
+
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
   [[ -r "/usr/share/zsh/share/antigen.zsh" ]] && source "/usr/share/zsh/share/antigen.zsh"
